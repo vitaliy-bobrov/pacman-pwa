@@ -2,7 +2,7 @@
 
   if ('serviceWorker' in navigator &&
       window.location.protocol === 'https:') {
-    navigator.serviceWorker.register('/pacman-pwa/service-worker.js', {scope: '/pacman-pwa/'})
+    navigator.serviceWorker.register('/service-worker.js')
       .then(registration => {
         registration.onupdatefound = () => {
 
