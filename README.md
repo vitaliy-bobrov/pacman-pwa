@@ -1,0 +1,61 @@
+# Pacman PWA
+
+Pacman game build as Progressive Web App.
+
+## Install & run:
+
+Builded files stored in a `dist` folder. To run game static server needed.
+
+- With NodeJS:
+  - Using yarn:
+
+  ```bash
+  yarn && npm start
+  ```
+
+  - Using npm:
+
+  ```bash
+  npm install && npm start
+  ```
+
+Webpack will run webpack-dev-server on `localhost:3000` with BrowserSync on `localhost:4000`.
+
+- With Python, just run command inside `dist` folder:
+
+```bash
+python -m SimpleHTTPServer
+```
+
+- With any static server, it should serve files from `dist`
+
+## Controls
+
+### Keyboard
+SPACE - Start next level or restart game after win or game over.
+UP - Move up
+LEFT - Move left
+DOWN - Move down
+RIGHT - Move right
+
+### Touch screen
+TAP - Start next level or restart game after win or game over.
+SWIPE UP - Move up
+SWIPE LEFT - Move left
+SWIPE DOWN - Move down
+SWIPE RIGHT - Move right
+
+## Technologies
+- Phaser game engine
+- TypeScript
+- Webpack
+- Service worker with resources caching
+
+## Features:
+- Support desktop & modile devices
+- Works offline after resource cached
+- Support keyboard & touch controls
+- 3 levels
+- 8-bit music & sounds
+- Could be added on home screen on Android
+- Made with Love :)
