@@ -9,21 +9,13 @@ export interface PortalProps {
  * Map portal object.
  */
 export class Portal extends Phaser.Sprite {
-  props: PortalProps;
-  width: number;
-  height: number;
-
   constructor(game: PacmanGame,
               x: number,
               y: number,
-              width: number,
-              height: number,
-              props: PortalProps) {
+              public width: number,
+              public height: number,
+              public props: PortalProps) {
     super(game, x, y, null);
-
-    this.props = props;
-    this.width = width;
-    this.height = height;
   }
 
   /**

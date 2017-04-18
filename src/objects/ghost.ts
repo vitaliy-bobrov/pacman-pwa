@@ -38,11 +38,6 @@ export class Ghost extends TurningObject {
   private prevMarker = new Phaser.Point();
 
   /**
-   * Home to resurect.
-   */
-  private home = new Phaser.Point();
-
-  /**
    * Home position on map grid.
    */
   private homeMarker = new Phaser.Point();
@@ -62,11 +57,6 @@ export class Ghost extends TurningObject {
    */
   private timer: Phaser.Timer = this.game.time.create(false);
 
-  /**
-   * Waves timings.
-   */
-  private wavesDurations: Wave[];
-
   constructor(game: PacmanGame,
               x: number,
               y: number,
@@ -75,15 +65,13 @@ export class Ghost extends TurningObject {
               tileSize: number,
               speed: number,
               target: Phaser.Point,
-              home: Phaser.Point,
-              wavesDurations: Wave[]) {
+              public home: Phaser.Point,
+              public wavesDurations: Wave[]) {
     super(game, x, y, key, frame, tileSize, speed);
 
     this.scatterTarget = target;
-    this.home = home;
     this.homeMarker.x = Math.floor(home.x / this.tileSize);
     this.homeMarker.y = Math.floor(home.y / this.tileSize);
-    this.wavesDurations = wavesDurations;
 
     this.setAnimations();
     this.setSFX();

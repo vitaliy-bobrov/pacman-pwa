@@ -20,16 +20,6 @@ export abstract class TurningObject extends Phaser.Sprite {
   marker = new Phaser.Point();
 
   /**
-   * Map grid tile size.
-   */
-  tileSize: number;
-
-  /**
-   * Object base speed.
-   */
-  speed: number;
-
-  /**
    * Sprite scale number.
    */
   scaleSize = 1.5;
@@ -80,14 +70,12 @@ export abstract class TurningObject extends Phaser.Sprite {
               y: number,
               key: string,
               frame: number,
-              tileSize: number,
-              speed: number) {
+              public tileSize: number,
+              public speed: number) {
     super(game, x, y, key, frame);
 
     this.respawnPoint.x = x;
     this.respawnPoint.y = y;
-    this.tileSize = tileSize;
-    this.speed = speed;
     this.currentSpeed = speed;
 
     this.physics();
