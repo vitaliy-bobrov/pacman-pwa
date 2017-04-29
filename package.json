@@ -1,37 +1,44 @@
 {
-  "name": "it-challenges-pacman",
+  "name": "pacman-pwa",
   "version": "1.0.0",
-  "description": "HTML5 Pacman game.",
+  "description": "Pacman PWA arcade game build with Phaser & TypeScript.",
   "main": "index.ts",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --port 3000",
     "build": "webpack",
     "build:prod": "NODE_ENV=production webpack",
     "lint": "tslint src/**/*.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "phaser-typings": "typings install github:photonstorm/phaser/v2/typescript/typings.json -GD"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitaliy-bobrov/pacman-pwa.git"
+  },
+  "author": "Vitaliy Bobrov <bobrov1989@gmail.com> (https://vitaliy-bobrov.github.io)",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vitaliy-bobrov/pacman-pwa/issues"
+  },
+  "homepage": "https://vitaliy-bobrov.github.io/pacman-pwa/",
   "dependencies": {
-    "phaser": "2.6.2",
-    "phaser-swipe": "1.0.4"
+    "phaser": "^2.6.2",
+    "phaser-swipe": "^1.0.4"
   },
   "devDependencies": {
-    "@types/node": "7.0.12",
-    "browser-sync": "2.18.8",
-    "browser-sync-webpack-plugin": "1.1.4",
-    "clean-webpack-plugin": "0.1.16",
-    "copy-webpack-plugin": "4.0.1",
-    "expose-loader": "0.7.3",
-    "html-webpack-plugin": "2.28.0",
-    "sw-precache-webpack-plugin": "0.9.1",
-    "ts-loader": "2.0.3",
-    "tslint": "4.5.1",
-    "typescript": "2.2.2",
-    "typings": "2.1.0",
-    "webpack": "2.3.2",
-    "webpack-copy-plugin": "0.0.4",
-    "webpack-dev-server": "2.4.2"
+    "@types/node": "^7.0.12",
+    "browser-sync": "^2.18.8",
+    "browser-sync-webpack-plugin": "^1.1.4",
+    "clean-webpack-plugin": "^0.1.16",
+    "copy-webpack-plugin": "^4.0.1",
+    "expose-loader": "^0.7.3",
+    "html-webpack-plugin": "^2.28.0",
+    "sw-precache-webpack-plugin": "^0.9.1",
+    "ts-loader": "^2.0.3",
+    "tslint": "^4.5.1",
+    "typescript": "^2.3.2",
+    "typings": "^2.1.0",
+    "webpack": "^2.3.2",
+    "webpack-copy-plugin": "^0.0.4",
+    "webpack-dev-server": "^2.4.2"
   }
 }
