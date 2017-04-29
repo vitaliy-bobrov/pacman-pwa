@@ -2,7 +2,7 @@
 
 Pacman game build as Progressive Web App.
 
-[Play Game](https://vitaliy-bobrov.github.io/pacman-pwa/)
+🎮 [Play Game](https://vitaliy-bobrov.github.io/pacman-pwa/)
 
 ## Install & run:
 
