@@ -58,7 +58,7 @@ export abstract class TurningObject extends Phaser.Sprite {
   /**
    * Move calculations threshost.
    */
-  private threshold = 4;
+  private threshold = 8;
 
   /**
    * Turn point on map grid.
