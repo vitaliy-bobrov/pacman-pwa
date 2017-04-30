@@ -34,18 +34,18 @@ python -m SimpleHTTPServer
 ## Controls
 
 ### Keyboard
-SPACE - Start next level or restart game after win or game over.
-UP - Move up
-LEFT - Move left
-DOWN - Move down
-RIGHT - Move right
+- SPACE - Start next level or restart game after win or game over.
+- UP - Move up
+- LEFT - Move left
+- DOWN - Move down
+- RIGHT - Move right
 
 ### Touch screen
-TAP - Start next level or restart game after win or game over.
-SWIPE UP - Move up
-SWIPE LEFT - Move left
-SWIPE DOWN - Move down
-SWIPE RIGHT - Move right
+- TAP - Start next level or restart game after win or game over.
+- SWIPE UP - Move up
+- SWIPE LEFT - Move left
+- SWIPE DOWN - Move down
+- SWIPE RIGHT - Move right
 
 ## Technologies
 - Phaser game engine
