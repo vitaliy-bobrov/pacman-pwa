@@ -11,9 +11,6 @@ import { GameState } from './states/game';
  * Main game object.
  */
 export class PacmanGame extends Phaser.Game {
-  /**
-   * Map grid tile size.
-   */
   tileSize = 16;
 
   constructor(config: Phaser.IGameConfig) {

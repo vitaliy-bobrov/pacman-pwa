@@ -12,132 +12,43 @@ import { Ghost } from '../objects/ghost';
 import {
   getObjectsByType,
   getRespawnPoint,
-  getTargetPoint } from '../utils/tilemap.helpers';
+  getTargetPoint
+} from '../utils/tilemap.helpers';
 
 /**
  * Main game state.
  */
 export class GameState extends State {
-  /**
-   * Grid map.
-   */
   map: Phaser.Tilemap;
-
-  /**
-   * Background layer.
-   */
   bgLayer: Phaser.TilemapLayer;
-
-  /**
-   * Level walls layer.
-   */
   wallsLayer: Phaser.TilemapLayer;
-
-  /**
-   * Game play mode.
-   */
   active: boolean;
-
-  /**
-   * Player scores.
-   */
   score: number;
-
-  /**
-   * Scores multiplier.
-   */
   multi: number;
-
-  /**
-   * Pacman lifes.
-   */
   lifes: number;
-
-  /**
-   * Level number.
-   */
   level: number;
-
-  /**
-   * Game difficulty settings.
-   */
   difficlty: GameDifficulty;
-
-  /**
-   * Simple dots to gather.
-   */
   pellets: Phaser.Group;
-
-  /**
-   * Power pill - enables Pacman power mode.
-   */
   pills: Phaser.Group;
-
-  /**
-   * Pacman bonus fruits.
-   */
   bonuses: Phaser.Group;
-
-  /**
-   * Map portals.
-   */
   portals: Phaser.Group;
-
-  /**
-   * Pacman enemies - Ghosts.
-   */
   ghosts: Phaser.Group;
-
-  /**
-   * Ghosts home point.
-   */
   ghostsHome = new Phaser.Point();
-
-  /**
-   * Pacman.
-   */
   pacman: Pacman;
-
-  /**
-   * Ghost - blinky.
-   */
   blinky: Ghost;
-
-  /**
-   * Ghost - pinky.
-   */
   pinky: Ghost;
-
-  /**
-   * Ghost - inky.
-   */
   inky: Ghost;
-
-  /**
-   * Ghost - clyde.
-   */
   clyde: Ghost;
 
-  /**
-   * Keyboard controls.
-   */
+
   controls: Phaser.CursorKeys;
   spaceKey: Phaser.Key;
 
-  /**
-   * Touch controls.
-   */
   swipe: Swipe;
   isTouch: boolean;
 
-  /**
-   * Sounds & music.
-   */
   sfx: SFX;
 
-  /**
-   * Game interface.
-   */
   private interface: Phaser.Group;
   private lifesArea: Phaser.Sprite[] = [];
   private scoreBtm: Phaser.BitmapText;
@@ -148,7 +59,6 @@ export class GameState extends State {
   constructor() {
     super();
 
-    // Bind to use from other context.
     this.onPowerModeStart = this.onPowerModeStart.bind(this);
     this.onPowerModeEnd = this.onPowerModeEnd.bind(this);
   }
@@ -378,13 +288,11 @@ export class GameState extends State {
    * @param portal - portal object.
    */
   teleport(unit: Pacman | Ghost, portal: Portal) {
-    const target = this.portals
-      .filter(p => {
-        return p.props.i === portal.props.target;
-      })
+    const { x, y } = this.portals
+      .filter(p => p.props.i === portal.props.target)
       .list[0];
 
-    unit.teleport(portal.x, portal.y, target.x, target.y);
+    unit.teleport(portal.x, portal.y, x, y);
   }
 
   /**
@@ -530,13 +438,10 @@ export class GameState extends State {
    * Gets random pellet position on map.
    */
   private getRandomPelletPosition(): Phaser.Point {
-    const rndPellet = this.pellets
+    const { x, y } = this.pellets
       .children[this.rnd.integerInRange(0, this.pellets.children.length - 1)];
 
-    return {
-      x: rndPellet.x,
-      y: rndPellet.y
-    } as Phaser.Point;
+    return { x, y } as Phaser.Point;
   }
 
   /**

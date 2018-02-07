@@ -7,34 +7,12 @@ import { TurningObject } from './turning';
  * Pacman hero.
  */
 export class Pacman extends TurningObject {
-  /**
-   * Pacman game mode.
-   */
   mode: PacmanMode;
-
-  /**
-   * Sounds.
-   */
   sfx: SFX;
 
-  /**
-   * Started move.
-   */
   private started = false;
-
-  /**
-   * Initial sprite frame.
-   */
   private startFrame = 0;
-
-  /**
-   * Power mode timer.
-   */
   private powerTimer: Phaser.TimerEvent;
-
-  /**
-   * Move start hook.
-   */
   private afterStartFn: Function;
 
   constructor(game: PacmanGame,
@@ -42,7 +20,7 @@ export class Pacman extends TurningObject {
               y: number,
               tileSize: number,
               speed: number) {
-    super(game, x, y, 'pacman', 0, tileSize, speed);
+    super(game, x, y, 'pacman', 0, tileSize, speed, 16);
 
     this.setAnimations();
     this.setSFX();

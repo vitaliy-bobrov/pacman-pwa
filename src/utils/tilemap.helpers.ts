@@ -4,23 +4,17 @@ export function getObjectsByType(type: string, map: Phaser.Tilemap, layer: strin
 }
 
 export function getRespawnPoint(name: string, map: Phaser.Tilemap, layer = 'objects'): Phaser.Point {
-  const item = map.objects[layer]
+  const { x, y } = map.objects[layer]
     .filter(element => element.type === 'respawn' && element.name === name)
     .shift();
 
-  return {
-    x: item.x,
-    y: item.y
-  } as Phaser.Point;
+  return { x, y } as Phaser.Point;
 }
 
 export function getTargetPoint(name: string, map: Phaser.Tilemap, layer = 'objects'): Phaser.Point {
-  const item = map.objects[layer]
+  const { x, y } = map.objects[layer]
     .filter(element => element.type === 'target' && element.name === name)
     .shift();
 
-  return {
-    x: item.x,
-    y: item.y
-  } as Phaser.Point;
+  return { x, y } as Phaser.Point;
 }

@@ -7,54 +7,16 @@ import { GhostMode } from '../interfaces/ghost';
  * Ghosts object boilerplate.
  */
 export class Ghost extends TurningObject {
-  /**
-   * Current Ghost mode.
-   */
   mode: GhostMode;
-
-  /**
-   * Sounds.
-   */
   sfx: SFX;
-
-  /**
-   * Ghost game state.
-   */
   inGame = false;
 
-  /**
-   * Current target to follow.
-   */
   private target = new Phaser.Point();
-
-  /**
-   * Patrol mode target.
-   */
   private scatterTarget = new Phaser.Point();
-
-  /**
-   * Prev position on map grid.
-   */
   private prevMarker = new Phaser.Point();
-
-  /**
-   * Home position on map grid.
-   */
   private homeMarker = new Phaser.Point();
-
-  /**
-   * Previous mode.
-   */
   private recoverMode: GhostMode;
-
-  /**
-   * Mode wave number.
-   */
   private waveCount = 0;
-
-  /**
-   * Waves timer.
-   */
   private timer: Phaser.Timer = this.game.time.create(false);
 
   constructor(game: PacmanGame,

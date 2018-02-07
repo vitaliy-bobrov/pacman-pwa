@@ -56,11 +56,6 @@ export abstract class TurningObject extends Phaser.Sprite {
   private telepoting: boolean;
 
   /**
-   * Move calculations threshost.
-   */
-  private threshold = 8;
-
-  /**
    * Turn point on map grid.
    */
   private turnPoint = new Phaser.Point();
@@ -71,7 +66,8 @@ export abstract class TurningObject extends Phaser.Sprite {
               key: string,
               frame: number,
               public tileSize: number,
-              public speed: number) {
+              public speed: number,
+              private threshold = 4) {
     super(game, x, y, key, frame);
 
     this.respawnPoint.x = x;

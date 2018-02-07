@@ -51,7 +51,7 @@ function exposeRules(modulePath, name) {
 }
 
 module.exports = {
-  devtool: IS_PROD ? 'source-map' : 'cheap-source-map',
+  devtool: IS_PROD ? null : 'cheap-source-map',
   entry: {
     pacman: path.resolve(__dirname, 'src/index.ts')
   },

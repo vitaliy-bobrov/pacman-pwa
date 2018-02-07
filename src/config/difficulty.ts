@@ -46,7 +46,7 @@ export const difficulty = [
     ]
   },
   {
-    multiplier: 2,
+    multiplier: 3,
     powerModeTime: 5000,
     pacmanSpeed: 120,
     ghostSpeed: 110,
