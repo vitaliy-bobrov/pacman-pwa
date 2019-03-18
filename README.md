@@ -1,12 +1,12 @@
 # Pacman PWA
 
-Pacman game build as Progressive Web App.
+Pacman game built as a Progressive Web App.
 
 🎮 [Play Game](https://vitaliy-bobrov.github.io/pacman-pwa/)
 
 ## Install & run:
 
-Builded files stored in a `dist` folder. To run game static server needed.
+Built files are stored in a `dist` folder. To run the game, a static server is needed.
 
 - With NodeJS:
   - Using yarn:
@@ -54,7 +54,7 @@ python -m SimpleHTTPServer
 - Service worker with resources caching
 
 ## Features:
-- Support desktop & modile devices
+- Support desktop & mobile devices
 - Works offline after resource cached
 - Support keyboard & touch controls
 - 3 levels
