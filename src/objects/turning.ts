@@ -10,7 +10,7 @@ export abstract class TurningObject extends Phaser.Sprite {
   turning = Phaser.NONE;
 
   /**
-   * Current move dirrection.
+   * Current move di/rection.
    */
   current = Phaser.NONE;
 
@@ -124,7 +124,7 @@ export abstract class TurningObject extends Phaser.Sprite {
     } else {
       this.turning = turnTo;
 
-      // Adjest point to map grid.
+      // Adjust point to map grid.
       this.turnPoint.x = (this.marker.x * this.tileSize) + this.tileSize / 2;
       this.turnPoint.y = (this.marker.y * this.tileSize) + this.tileSize / 2;
     }

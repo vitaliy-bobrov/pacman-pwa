@@ -93,7 +93,7 @@ export class GameState extends State {
   }
 
   update() {
-    // Scheck if game is active.
+    // Check if game is active.
     if (!this.active) {
       this.ghosts.callAll('stop', undefined);
       this.pacman.stop();
@@ -118,7 +118,7 @@ export class GameState extends State {
     this.game.physics.arcade.collide(this.pacman, this.wallsLayer);
     this.game.physics.arcade.collide(this.ghosts, this.wallsLayer);
 
-    //Checks overlapings.
+    //Checks overlappings.
     this.game.physics.arcade.overlap(this.ghosts, this.portals, this.teleport, null, this);
     this.game.physics.arcade.overlap(this.pacman, this.portals, this.teleport, null, this);
     this.game.physics.arcade.overlap(this.pacman, this.pellets, this.collect, null, this);
@@ -141,7 +141,7 @@ export class GameState extends State {
   }
 
   /**
-   * Update controlls handler.
+   * Update controls handler.
    */
   checkControls() {
     if (this.isTouch) {
@@ -311,7 +311,7 @@ export class GameState extends State {
       this.updateScore(points);
     }
 
-    // All items eated by Pacman.
+    // All items eaten by Pacman.
     if (!this.pellets.total) {
       pacman.sfx.munch.stop();
       const nextLevel = this.level < 3;

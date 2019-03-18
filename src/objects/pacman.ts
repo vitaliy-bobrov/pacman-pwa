@@ -79,7 +79,7 @@ export class Pacman extends TurningObject {
   }
 
   /**
-   * Disables poewr mode.
+   * Disables power mode.
    */
   disablePowerMode() {
     this.mode = 'normal';
