@@ -1,4 +1,4 @@
-import { PacmanGame } from '../'
+import { PacmanGame } from '../';
 import { PacmanMode } from '../interfaces/pacman';
 import { SFX } from '../interfaces/game';
 import { TurningObject } from './turning';
@@ -75,7 +75,7 @@ export class Pacman extends TurningObject {
 
     this.powerTimer.timer.onComplete.add(() => {
       onEnd();
-    })
+    });
   }
 
   /**

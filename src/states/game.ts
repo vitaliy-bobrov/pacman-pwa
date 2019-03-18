@@ -2,7 +2,6 @@ import * as Swipe from 'phaser-swipe';
 import { SwipeModel } from '../interfaces/swipe';
 import { State } from '../interfaces/state';
 import { GameDifficulty, SFX } from '../interfaces/game';
-import { ItemType } from '../interfaces/item';
 import { GhostName } from '../interfaces/ghost';
 import { difficulty } from '../config/difficulty';
 import { Pill } from '../objects/pill';
@@ -118,7 +117,7 @@ export class GameState extends State {
     this.game.physics.arcade.collide(this.pacman, this.wallsLayer);
     this.game.physics.arcade.collide(this.ghosts, this.wallsLayer);
 
-    //Checks overlappings.
+    // Checks overlappings.
     this.game.physics.arcade.overlap(this.ghosts, this.portals, this.teleport, null, this);
     this.game.physics.arcade.overlap(this.pacman, this.portals, this.teleport, null, this);
     this.game.physics.arcade.overlap(this.pacman, this.pellets, this.collect, null, this);
@@ -179,7 +178,7 @@ export class GameState extends State {
     const direction = this.swipe.check();
 
     if (direction !== null) {
-      switch(direction.direction) {
+      switch (direction.direction) {
         case this.swipe.DIRECTION_LEFT:
           this.pacman.onControls(Phaser.LEFT);
           break;

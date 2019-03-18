@@ -1,4 +1,4 @@
-import { PacmanGame } from '../'
+import { PacmanGame } from '../';
 
 /**
  * Tuning objects base class.
@@ -51,11 +51,6 @@ export abstract class TurningObject extends Phaser.Sprite {
   private respawnPoint = new Phaser.Point();
 
   /**
-   * Is object teleporting.
-   */
-  private telepoting: boolean;
-
-  /**
    * Turn point on map grid.
    */
   private turnPoint = new Phaser.Point();
@@ -103,9 +98,9 @@ export abstract class TurningObject extends Phaser.Sprite {
    */
   updateSensor(map: Phaser.Tilemap, index: number) {
     this.directions[1] = map.getTileLeft(index, this.marker.x, this.marker.y);
-    this.directions[2] = map.getTileRight(index, this.marker.x, this.marker.y),
-    this.directions[3] = map.getTileAbove(index, this.marker.x, this.marker.y),
-    this.directions[4] = map.getTileBelow(index, this.marker.x, this.marker.y)
+    this.directions[2] = map.getTileRight(index, this.marker.x, this.marker.y);
+    this.directions[3] = map.getTileAbove(index, this.marker.x, this.marker.y);
+    this.directions[4] = map.getTileBelow(index, this.marker.x, this.marker.y);
   }
 
   /**

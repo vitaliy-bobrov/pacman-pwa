@@ -221,8 +221,6 @@ export class Ghost extends TurningObject {
    * @param posibilities - possible directions.
    */
   private chooseDirection(posibilities: number[]): number {
-    let result: number;
-
     const sorted = posibilities
       .slice()
       .sort((a: number, b: number) => {
@@ -232,12 +230,11 @@ export class Ghost extends TurningObject {
 
     // Random choose mode.
     if (this.mode === 'frightened') {
-      result = sorted[this.game.rnd.integerInRange(0, sorted.length - 1)];
-    } else {
-      result = sorted.shift(); // Closests to target.
+      return sorted[this.game.rnd.integerInRange(0, sorted.length - 1)];
     }
 
-    return result;
+    // Closests to target.
+    return sorted.shift();
   }
 
   /**
