@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const IS_PROD = process.env.NODE_ENV === 'production';
 
@@ -81,11 +82,19 @@ module.exports = {
       exposeRules(phaserPath, 'Phaser')
     ]
   },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        uglifyOptions: {
+          compress: IS_PROD,
+          output: {
+            comments: !IS_PROD
+          }
+        }
+      })
+    ]
+  },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: IS_PROD,
-      comments: !IS_PROD
-    }),
     new CleanWebpackPlugin([outputPath]),
     new CopyWebpackPlugin([
       {
