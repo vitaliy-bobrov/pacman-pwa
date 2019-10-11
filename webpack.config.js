@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
@@ -95,7 +95,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin([outputPath]),
+    new CleanWebpackPlugin(),
     new CopyWebpackPlugin([
       {
         from: path.join(__dirname, 'assets/**/*'),
